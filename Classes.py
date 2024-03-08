@@ -1,6 +1,12 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
 
+# todo: (Card) handle data validation (card number format, expiry date, cvv)
+# todo: (Card) handle securely storing cvv and card number
+# todo: (Transaction) is_debit() or is_credit() to check transaction type
+# todo: (Transaction) update_balance() to adjust card balance after a transaction
+# todo: (Transaction) handle data validation (date, amount, type)
+
 
 class Base(ABC):
     """A base class for your application's custom classes."""
@@ -38,9 +44,6 @@ class Bank(Base):
 class Card(Base):
     """Represents a credit or debit card."""
 
-    # todo: handle data validation (card number format, expiry date, cvv)
-    # todo: handle securely storing cvv and card number
-    # todo: 
     def __init__(self, bank: Bank, card_number: str, owner: Owner, 
                  balance: int = 0, expiry_month: str = '00', expiry_day : str = '00', cvv : str = '000'
                  ) -> None:
@@ -65,9 +68,17 @@ class Card(Base):
 
 
 class Transaction(Base):
-    def __init__(self, card:Card, amount:float, date:datetime, type:str) -> None:
+    """Represents a financial transaction."""
+
+    def __init__(self, card: Card, amount: float, date: datetime, type: str, description: str = None) -> None:
+        self.card: Card = card
+        self.amount: float = amount
+        self.date: datetime = date
+        self.type: str = type
+
+        self.description: str = description
 
         super().__init__()
 
     def title(self) -> str:
-        return f'transaction'
+        return f"{self.type} of ${self.amount} on {self.date.strftime('%Y-%m-%d')}"
