@@ -1,12 +1,6 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
 
-# todo: (Card) handle data validation (card number format, expiry date, cvv)
-# todo: (Card) handle securely storing cvv and card number
-# todo: (Transaction) is_debit() or is_credit() to check transaction type
-# todo: (Transaction) update_balance() to adjust card balance after a transaction
-# todo: (Transaction) handle data validation (date, amount, type)
-
 
 class Base(ABC):
     """A base class for your application's custom classes."""

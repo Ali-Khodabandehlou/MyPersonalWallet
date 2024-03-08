@@ -1,0 +1,29 @@
+- Store credit card info (keep security in mind):
+    - transactions:
+        - Import from CSV, XLS files
+        - Choose custom column names 
+        - Add tag
+        - visualization
+    - other (1):
+        - create main.py file for interactive application
+        - (Card) handle data validation (card number format, expiry date, cvv)
+        - (Card) handle securely storing cvv and card number
+        - develop data saving and loading functions
+        - (Transaction) is_debit() or is_credit() to check transaction type
+        - (Transaction) update_balance() to adjust card balance after a transaction
+        - add functions to read from and generating excel files
+        - (Transaction) handle data validation (date, amount, type)
+        - add README file
+    - Database setting
+    - Log transactions (income and expense)
+    - Analyze weekly, monthly, seasonal, yearly changes
+    - Log investment portfolio
+    - Analyze investment results
+    - Connect to APIs
+    - Account allocation:
+        - Add tags
+        - PnL analysis
+        - Portfolio manager
+        - Data visualizations
+        - Set card as account
+    - Secure card number and cvv save methods
