@@ -1,9 +1,4 @@
 - Store credit card info (keep security in mind):
-    - transactions:
-        - Import from CSV, XLS files
-        - Choose custom column names 
-        - Add tag
-        - visualization
     - other (1):
         - create main.py file for interactive application
         - (Card) handle data validation (card number format, expiry date, cvv)
@@ -16,6 +11,11 @@
         - add README file
     - Database setting
     - Log transactions (income and expense)
+    - transactions:
+        - Import from CSV, XLS files
+        - Choose custom column names 
+        - Add tag
+        - visualization
     - Analyze weekly, monthly, seasonal, yearly changes
     - Log investment portfolio
     - Analyze investment results
