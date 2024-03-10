@@ -1,6 +1,7 @@
 - Store credit card info (keep security in mind):
     - other (1):
-        - create main.py file for interactive application
+        - create main.py file for interactive application: 
+            - # go back if input==0
         - (Card) handle data validation (card number format, expiry date, cvv)
         - (Card) handle securely storing cvv and card number
         - develop data saving and loading functions
