@@ -1,7 +1,10 @@
+import json
 import os
 
 from Classes import Bank, Card, Transaction, Owner
 
+with open('bin/stages.json', 'r') as f:
+    stages = json.load(f)
 stage = 0
 
 if __name__ == '__main__':
