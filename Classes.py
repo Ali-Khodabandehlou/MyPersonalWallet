@@ -40,7 +40,7 @@ class Card(Base):
     """Represents a credit or debit card."""
 
     def __init__(self, bank: Bank, card_number: str, owner: Owner, 
-                 balance: int = 0, expiry_month: str = '00', expiry_day : str = '00', cvv : str = '000'
+                 balance: int = 0, expiry_month: str = '00', expiry_day : str = '00'
                  ) -> None:
         card_number_pattern = r"^[0-9]{12}$"
 
@@ -60,12 +60,6 @@ class Card(Base):
             raise ValueError("Invalid cvv format.")
         if bool(re.match(date_pattern, expiry_day)):
             self.expiry_day = expiry_day
-        else:
-            raise ValueError("Invalid cvv format.")
-
-        cvv_pattern = r"\d{3,4}"
-        if bool(re.match(cvv_pattern, cvv)):
-            self._cvv = cvv
         else:
             raise ValueError("Invalid cvv format.")
 
