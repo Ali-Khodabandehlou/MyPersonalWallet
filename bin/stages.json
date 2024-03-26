@@ -1,0 +1,38 @@
+{
+    "0": {
+        "options": {
+            "1": [1, "Banks"],
+            "2": [2, "Cards"],
+            "3": [3, "Transactions"],
+            "4": [4, "Owners"],
+            "0": [0, "go back"]
+        },
+        "messages": [
+            "Welcome to your personal wallet manager."
+            ]
+    },
+    "1": {
+        "options": {},
+        "messages": [
+            "List of your Banks:"
+        ]
+    },
+    "2": {
+        "options": {},
+        "messages": [
+            "List of your Cards:"
+        ]
+    },
+    "3": {
+        "options": {},
+        "messages": [
+            "List of your Transactions:"
+        ]
+    },
+    "4": {
+        "options": {},
+        "messages": [
+            "List of Owners:"
+        ]
+    }
+}
