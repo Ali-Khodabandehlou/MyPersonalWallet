@@ -1,6 +1,11 @@
 - Store credit card info (keep security in mind):
+    - transactions:
+        - Import from CSV, XLS files
+        - Choose custom column names 
+        - Add tag
+        - visualization
+        - logging
     - other (1):
-        - (Card) handle securely storing card number
         - develop data saving and loading functions
         - (Transaction) is_debit() or is_credit() to check transaction type
         - (Transaction) update_balance() to adjust card balance after a transaction
@@ -8,12 +13,7 @@
         - (Transaction) handle data validation (date, amount, type)
         - add README file
         - (card) move dtata validation from init to another function
-    - transactions:
-        - Import from CSV, XLS files
-        - Choose custom column names 
-        - Add tag
-        - visualization
-        - logging
+        - (Card) handle securely storing card number
     - Analyze weekly, monthly, seasonal, yearly changes
     - Log investment portfolio
     - Analyze investment results

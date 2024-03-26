@@ -12,6 +12,12 @@ class Base(ABC):
     def __init__(self) -> None:
         pass
 
+    def title(self) -> str:
+        return 'Base Class'
+    
+    def info(self):
+        return self.title()
+
 
 class Owner(Base):
     """Represents an owner of a card."""
@@ -42,7 +48,7 @@ class Card(Base):
     def __init__(self, bank: Bank, card_number: str, owner: Owner, 
                  balance: int = 0, expiry_month: str = '00', expiry_day : str = '00'
                  ) -> None:
-        card_number_pattern = r"^[0-9]{12}$"
+        card_number_pattern = r"^[0-9]{16}$"
 
         self.bank = bank
 
