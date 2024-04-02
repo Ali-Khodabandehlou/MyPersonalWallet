@@ -61,6 +61,9 @@
         "type": "list",
         "class": "bank",
         "options": {
+            "1": ["12", "Add a new bank"],
+            "2": ["13", "Edit a bank"],
+            "3": ["14", "remove a bank"],
             "0": ["1", "go back"]
         },
         "messages": [
