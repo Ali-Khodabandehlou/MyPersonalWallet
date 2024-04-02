@@ -10,21 +10,31 @@ stage = '0'
 if __name__ == '__main__':
     while True:
         os.system('cls||clear')
-        for msg in stages[str(stage)]['messages']:
+        
+        # print stage messages
+        for msg in stages[stage]['messages']:
             print(msg)
-        print('select an option:')
-        for key, value in stages[str(stage)]['options'].items():
-                print(f'{key}) {value[1]}')
-        print('q for quit')
+
+        # print stage options
+        if stages[stage]['type'] == 'options':
+            print('\nselect an option:')
+            for key, value in stages[stage]['options'].items():
+                    print(f'{key}) {value[1]}')
+        
+        # print stage list
+        elif stages[stage]['type'] == 'list':
+             print('\n')
+
+        print('\nq for quit')
 
         new_stage = input()
-        if new_stage == 'q':
+        if new_stage == 'q':  # exit condition
             break
-        elif new_stage.isnumeric():
-            if stage == '0' and new_stage == '0':
+        elif new_stage.isnumeric():  # stage handler
+            if new_stage not in stages[stage]['options'].keys():  # handle exceptional numeric entries 
                  stage = '0'
                  continue
-            print(stages[str(stage)]['options'][new_stage][0])
-            stage = stages[str(stage)]['options'][new_stage][0]
-        else:
+            print(stages[stage]['options'][new_stage][0])
+            stage = stages[stage]['options'][new_stage][0]
+        else:  # handle other exceptional entries
             stage = '0'
