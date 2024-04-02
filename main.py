@@ -2,6 +2,7 @@ import json
 import os
 
 from Classes import Bank, Card, Transaction, Owner
+from DataBase import read_from_db
 
 with open('bin/stages.json', 'r') as f:
     stages = json.load(f)
@@ -23,7 +24,9 @@ if __name__ == '__main__':
         
         # print stage list
         elif stages[stage]['type'] == 'list':
-             print('\n')
+            stage_class = stages[stage]['class']
+            class_data = read_from_db(stage_class)
+            print(class_data)
 
         print('\nq for quit')
 

@@ -59,6 +59,7 @@
     "11": {
         "comment": "bank_list",
         "type": "list",
+        "class": "bank",
         "options": {
             "0": ["1", "go back"]
         },
@@ -69,6 +70,7 @@
     "12": {
         "comment": "bank_add",
         "type": "list",
+        "class": "bank",
         "options": {
             "0": ["1", "go back"]
         },
@@ -79,6 +81,7 @@
     "13": {
         "comment": "bank_edit",
         "type": "list",
+        "class": "bank",
         "options": {
             "0": ["1", "go back"]
         },
@@ -89,6 +92,7 @@
     "14": {
         "comment": "bank_remove",
         "type": "list",
+        "class": "bank",
         "options": {
             "0": ["1", "go back"]
         },
