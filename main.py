@@ -27,6 +27,10 @@ if __name__ == '__main__':
             stage_class = stages[stage]['class']
             class_data = read_from_db(stage_class)
             print(class_data)
+            
+            print('\nselect an option:')
+            for key, value in stages[stage]['options'].items():
+                    print(f'{key}) {value[1]}')
 
         print('\nq for quit')
 
