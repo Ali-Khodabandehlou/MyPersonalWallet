@@ -1,4 +1,6 @@
 - Store credit card info (keep security in mind):
+    - complete menu handling
+    - complete class handling
     - transactions:
         - Import from CSV, XLS files
         - Choose custom column names 

@@ -1,38 +1,99 @@
 {
     "0": {
+        "comment": "main_menu",
+        "type": "options",
         "options": {
-            "1": [1, "Banks"],
-            "2": [2, "Cards"],
-            "3": [3, "Transactions"],
-            "4": [4, "Owners"],
-            "0": [0, "go back"]
+            "1": ["1", "Banks"],
+            "2": ["2", "Cards"],
+            "3": ["3", "Transactions"],
+            "4": ["4", "Owners"]
         },
         "messages": [
             "Welcome to your personal wallet manager."
             ]
     },
     "1": {
-        "options": {},
+        "comment": "bank_manager",
+        "type": "options",
+        "options": {
+            "1": ["11", "List of banks"],
+            "2": ["12", "Add a new bank"],
+            "3": ["13", "Edit a bank"],
+            "4": ["14", "remove a bank"],
+            "0": ["0", "go back"]
+        },
         "messages": [
-            "List of your Banks:"
+            "Bank Manager:"
         ]
     },
     "2": {
-        "options": {},
+        "comment": "card_manager",
+        "type": "options",
+        "options": {
+            "0": ["0", "go back"]
+        },
         "messages": [
             "List of your Cards:"
         ]
     },
     "3": {
-        "options": {},
+        "comment": "transaction_manager",
+        "type": "options",
+        "options": {
+            "0": ["0", "go back"]
+        },
         "messages": [
             "List of your Transactions:"
         ]
     },
     "4": {
-        "options": {},
+        "comment": "owner_manager",
+        "type": "options",
+        "options": {
+            "0": ["0", "go back"]
+        },
         "messages": [
             "List of Owners:"
+        ]
+    },
+    "11": {
+        "comment": "bank_list",
+        "type": "list",
+        "options": {
+            "0": ["1", "go back"]
+        },
+        "messages": [
+            "List of Banks:"
+        ]
+    },
+    "12": {
+        "comment": "bank_add",
+        "type": "list",
+        "options": {
+            "0": ["1", "go back"]
+        },
+        "messages": [
+            "Add a new bank"
+        ]
+    },
+    "13": {
+        "comment": "bank_edit",
+        "type": "list",
+        "options": {
+            "0": ["1", "go back"]
+        },
+        "messages": [
+            "Edit a bank"
+        ]
+    },
+    "14": {
+        "comment": "bank_remove",
+        "type": "list",
+        "options": {
+            "0": ["1", "go back"]
+        },
+        "messages": [
+            "Remove a bank"
         ]
     }
 }
