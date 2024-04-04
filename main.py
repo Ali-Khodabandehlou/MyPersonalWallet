@@ -1,3 +1,4 @@
+import importlib
 import json
 import os
 
@@ -16,21 +17,38 @@ if __name__ == '__main__':
         for msg in stages[stage]['messages']:
             print(msg)
 
-        # print stage options
+        # options stages
         if stages[stage]['type'] == 'options':
-            print('\nselect an option:')
-            for key, value in stages[stage]['options'].items():
-                    print(f'{key}) {value[1]}')
+            pass
+            # print('\nselect an option:')
+            # for key, value in stages[stage]['options'].items():
+            #     print(f'{key}) {value[1]}')
         
-        # print stage list
+        # list stages
         elif stages[stage]['type'] == 'list':
             stage_class = stages[stage]['class']
             class_data = read_from_db(stage_class)
             print(class_data)
+
+        # functional stages
+        elif stages[stage]['type'] == 'func':
+            stage_class = stages[stage]['class']
+            stage_func = stages[stage]['func']
+
+            _module = __import__('Classes', fromlist=[stage_class])
+            _class = getattr(_module, stage_class)
+            new_class = _class()
+            func = getattr(new_class, stage_func)
+
+            os.system('cls||clear')
+            print(func())
+            input('press any key to continue')
+            stage = stages[stage]['options']['0'][0]
+            continue
             
-            print('\nselect an option:')
-            for key, value in stages[stage]['options'].items():
-                    print(f'{key}) {value[1]}')
+        print('\nselect an option:')
+        for key, value in stages[stage]['options'].items():
+            print(f'{key}) {value[1]}')
 
         print('\nq for quit')
 
@@ -41,7 +59,6 @@ if __name__ == '__main__':
             if new_stage not in stages[stage]['options'].keys():  # handle exceptional numeric entries 
                  stage = '0'
                  continue
-            print(stages[stage]['options'][new_stage][0])
             stage = stages[stage]['options'][new_stage][0]
         else:  # handle other exceptional entries
             stage = '0'

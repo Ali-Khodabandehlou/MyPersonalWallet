@@ -50,6 +50,10 @@
         "comment": "owner_manager",
         "type": "options",
         "options": {
+            "1": ["41", "List of owners"],
+            "2": ["42", "Add a new owner"],
+            "3": ["43", "Edit an owner"],
+            "4": ["44", "remove an owner"],
             "0": ["0", "go back"]
         },
         "messages": [
@@ -59,7 +63,7 @@
     "11": {
         "comment": "bank_list",
         "type": "list",
-        "class": "bank",
+        "class": "Bank",
         "options": {
             "1": ["12", "Add a new bank"],
             "2": ["13", "Edit a bank"],
@@ -72,8 +76,9 @@
     },
     "12": {
         "comment": "bank_add",
-        "type": "list",
-        "class": "bank",
+        "type": "func",
+        "class": "Bank",
+        "func": "bank_add",
         "options": {
             "0": ["1", "go back"]
         },
@@ -84,7 +89,7 @@
     "13": {
         "comment": "bank_edit",
         "type": "list",
-        "class": "bank",
+        "class": "Bank",
         "options": {
             "0": ["1", "go back"]
         },
@@ -95,12 +100,60 @@
     "14": {
         "comment": "bank_remove",
         "type": "list",
-        "class": "bank",
+        "class": "Bank",
         "options": {
             "0": ["1", "go back"]
         },
         "messages": [
             "Remove a bank"
+        ]
+    },
+    "41": {
+        "comment": "owner_list",
+        "type": "list",
+        "class": "Owner",
+        "options": {
+            "1": ["42", "Add a new owner"],
+            "2": ["43", "Edit an owner"],
+            "3": ["44", "remove an owner"],
+            "0": ["4", "go back"]
+        },
+        "messages": [
+            "List of your Owners:"
+        ]
+    },
+    "42": {
+        "comment": "owner_add",
+        "type": "func",
+        "class": "Owner",
+        "func": "owner_add",
+        "options": {
+            "0": ["4", "go back"]
+        },
+        "messages": [
+            "Add a new owner"
+        ]
+    },
+    "43": {
+        "comment": "owner_edit",
+        "type": "list",
+        "class": "Owner",
+        "options": {
+            "0": ["4", "go back"]
+        },
+        "messages": [
+            "Edit an owner"
+        ]
+    },
+    "44": {
+        "comment": "owner_remove",
+        "type": "list",
+        "class": "Owner",
+        "options": {
+            "0": ["4", "go back"]
+        },
+        "messages": [
+            "Remove an owner"
         ]
     }
 }

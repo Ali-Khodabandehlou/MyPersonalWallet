@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
+import os
 import re
+
+from DataBase import write_to_db
 
 
 class Base(ABC):
@@ -22,13 +25,27 @@ class Base(ABC):
 class Owner(Base):
     """Represents an owner of a card."""
 
-    def __init__(self, first_name: str, last_name: str) -> None:
+    def __init__(self, first_name: str = '', last_name: str = '') -> None:
         self.first_name = first_name
         self.last_name = last_name
         super().__init__()
     
     def title(self) -> str:
         return f'{self.last_name}, {self.first_name}'
+    
+    def owner_add(self) -> str:
+        """Add a new owner"""
+        first_name = input('Enter owner\'s first name: ')
+        last_name = input('Enter owner\'s last name: ')
+        self.first_name = first_name
+        self.last_name = last_name
+
+        # write to database
+        try:
+            write_to_db('Owner', self.__dict__, 'add')
+            return f'seccussfuly added owner: {self.title()}'
+        except:
+            return 'something went wrong'
 
 
 class Bank(Base):
