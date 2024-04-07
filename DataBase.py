@@ -28,21 +28,21 @@ def read_from_db(class_name: str) -> dict:
         return data
     return {}
 
-def write_to_db(class_name: str, new_data: dict, update_method: str, pk: int = None) -> None:
+def write_to_db(class_name: str, new_data: dict, write_method: str, pk: int = None) -> None:
     """Writes new data, removes or updates old data to DataBase based on class_name and update_method
     
     Args:
-        update_method choices: add, remove, update
+        write_method choices: add, remove, update
     """
     
     old_data = read_from_db(class_name)
 
-    if update_method == 'add':
+    if write_method == 'add':
         new_pk = last_pk(old_data) + 1
         old_data[str(new_pk)] = new_data
-    elif update_method == 'update':
+    elif write_method == 'update':
         pass
-    elif update_method == 'remove':
+    elif write_method == 'remove':
         pass
     else:
         pass
