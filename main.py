@@ -3,6 +3,7 @@ import json
 import os
 
 from Classes import Bank, Card, Transaction, Owner
+from Classes import print_class_detail
 from DataBase import read_from_db
 
 with open('bin/stages.json', 'r') as f:
@@ -20,15 +21,13 @@ if __name__ == '__main__':
         # options stages
         if stages[stage]['type'] == 'options':
             stage_class = stages[stage]['class']
-            if stage_class is not 'None':
-                class_data = read_from_db(stage_class)
-                print(class_data)
+            if stage_class != 'None':
+                print_class_detail(stage_class)
         
         # list stages
         elif stages[stage]['type'] == 'list':
             stage_class = stages[stage]['class']
-            class_data = read_from_db(stage_class)
-            print(class_data)
+            print_class_detail(stage_class)
 
         # functional stages
         elif stages[stage]['type'] == 'func':

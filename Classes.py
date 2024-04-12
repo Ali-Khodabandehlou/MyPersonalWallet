@@ -3,7 +3,51 @@ from datetime import datetime
 import os
 import re
 
-from DataBase import write_to_db
+from DataBase import write_to_db, read_from_db
+
+
+def print_class_detail(class_name: str) -> None:
+    """prints class data read from db in a table format"""
+    class_data = read_from_db(class_name)
+
+    if not class_data:
+        print('No data to show.')
+        return
+
+    rows = []
+
+    columns = [' ']
+    columns_len = len(class_data[list(class_data.keys())[0]].keys())
+    for key in class_data[list(class_data.keys())[0]].keys():
+        columns.append(key)
+    column_width = int((100 - columns_len) / columns_len)
+    vertical_border = ['----']
+    for _ in range(columns_len):
+        vertical_border.append('-' * column_width)
+    rows.append(vertical_border)
+    rows.append(columns)
+    rows.append(vertical_border)
+    
+    for key, value in class_data.items():
+        new_row = [key]
+        for item in value.values():
+            new_row.append(item)
+        rows.append(new_row)
+        rows.append(vertical_border)
+    
+    for i in range(len(rows)):
+        if i % 2 == 0:
+            separator = ' '
+        else:
+            separator = '|'
+
+        print(separator, end='')
+        for j in range(len(rows[i])):
+            if j == 0:
+                print(f'{rows[i][j]:<4}', end=separator)
+            else:
+                print(f'{rows[i][j]:<{column_width}}', end=separator)
+        print()
 
 
 class Base(ABC):
