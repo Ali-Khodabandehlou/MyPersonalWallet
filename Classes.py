@@ -42,8 +42,7 @@ class Owner(Base):
 
         # write to database
         try:
-            write_to_db('Owner', self.__dict__, 'add')
-            return f'seccussfuly added owner: {self.title()}'
+            return f'seccussfuly added owner: {self.title()}' if write_to_db('Owner', self.__dict__, 'add') else 'something went wrong'
         except:
             return 'something went wrong'
 

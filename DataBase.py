@@ -28,27 +28,37 @@ def read_from_db(class_name: str) -> dict:
         return data
     return {}
 
-def write_to_db(class_name: str, new_data: dict, write_method: str, pk: int = None) -> None:
+def write_to_db(class_name: str, new_data: dict, write_method: str, pk: int = None) -> bool:
     """Writes new data, removes or updates old data to DataBase based on class_name and update_method
     
     Args:
         write_method choices: add, remove, update
+
+    Retuen:
+        False if error
+        True if OK
     """
     
     old_data = read_from_db(class_name)
 
-    if write_method == 'add':
+    if write_method == 'add':  # Create method
         new_pk = last_pk(old_data) + 1
         old_data[str(new_pk)] = new_data
-    elif write_method == 'update':
-        pass
-    elif write_method == 'remove':
-        pass
+    elif write_method == 'update':  # Update method
+        if not pk:
+            return False
+        if str(pk) not in old_data.keys():
+            return False
+        old_data[str(pk)] = new_data
+    elif write_method == 'remove':  # Remove method
+        old_data.pop(str(pk))
     else:
-        pass
-
+        return False
+    
+    # write to DB
     check_db_path()
     dbFilePath = os.path.join(os.getcwd(), DB_PATH, f'{class_name}.json')
     json_object = json.dumps(old_data, indent=4)
     with open(dbFilePath, 'w') as dbFile:
         dbFile.write(json_object)
+    return True
