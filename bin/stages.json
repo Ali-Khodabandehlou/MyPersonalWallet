@@ -2,6 +2,7 @@
     "0": {
         "comment": "main_menu",
         "type": "options",
+        "class": "None",
         "options": {
             "1": ["1", "Banks"],
             "2": ["2", "Cards"],
@@ -15,6 +16,7 @@
     "1": {
         "comment": "bank_manager",
         "type": "options",
+        "class": "Bank",
         "options": {
             "1": ["11", "List of banks"],
             "2": ["12", "Add a new bank"],
@@ -29,6 +31,7 @@
     "2": {
         "comment": "card_manager",
         "type": "options",
+        "class": "Card",
         "options": {
             "0": ["0", "go back"]
         },
@@ -39,6 +42,7 @@
     "3": {
         "comment": "transaction_manager",
         "type": "options",
+        "class": "Transaction",
         "options": {
             "0": ["0", "go back"]
         },
@@ -49,6 +53,7 @@
     "4": {
         "comment": "owner_manager",
         "type": "options",
+        "class": "Owner",
         "options": {
             "1": ["41", "List of owners"],
             "2": ["42", "Add a new owner"],

@@ -19,10 +19,10 @@ if __name__ == '__main__':
 
         # options stages
         if stages[stage]['type'] == 'options':
-            pass
-            # print('\nselect an option:')
-            # for key, value in stages[stage]['options'].items():
-            #     print(f'{key}) {value[1]}')
+            stage_class = stages[stage]['class']
+            if stage_class is not 'None':
+                class_data = read_from_db(stage_class)
+                print(class_data)
         
         # list stages
         elif stages[stage]['type'] == 'list':
