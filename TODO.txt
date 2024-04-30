@@ -1,6 +1,4 @@
 - Store credit card info (keep security in mind):
-    - change base class for DRY
-    
     - transactions:
         - Import from CSV, XLS files
         - Choose custom column names 
@@ -8,6 +6,7 @@
         - visualization
         - logging
     - other (1):
+        - todo from other files (2)
         - develop data saving and loading functions
         - (Transaction) is_debit() or is_credit() to check transaction type
         - (Transaction) update_balance() to adjust card balance after a transaction
