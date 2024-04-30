@@ -53,9 +53,6 @@ def print_class_detail(class_name: str) -> None:
 class Base(ABC):
     """A base class for your application's custom classes."""
 
-    #  @abstractmethod
-    #  def method(): ...
-
     def __init__(self) -> None:
         pass
 
@@ -89,6 +86,26 @@ class Owner(Base):
             return f'seccussfuly added owner: {self.title()}' if write_to_db('Owner', self.__dict__, 'add') else 'something went wrong'
         except:
             return 'something went wrong'
+    
+    def owner_update(self) -> str:
+        """Edit an owner"""
+        pk = input('Enter owner\'s pk: ')
+        if not pk.isnumeric():
+            return 'invalid pk'
+        data = read_from_db('Owner')
+        if not data:
+            return 'no owners to edit'
+        if pk not in data.keys():
+            return 'pk not exist'
+        
+        print('print new entries for given detail. leave it blank if no edits required')
+        class_data = data[pk]
+        for key in class_data.keys():
+            new_entry = input(f'{key} (old: {class_data[key]}): ')
+            class_data[key] = new_entry
+        data[pk] = class_data
+        
+        return None
 
 
 class Bank(Base):
