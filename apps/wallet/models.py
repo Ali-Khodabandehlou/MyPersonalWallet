@@ -19,7 +19,7 @@ class Owner(Base):
 class Wallet(Base):
     """Wallet model"""
 
-    owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
+    owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name="wallets")
 
     def balance(self) -> int:
         # TODO: complete this method
