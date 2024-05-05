@@ -1,11 +1,6 @@
 - Store credit card info (keep security in mind):
-    - transactions:
-        - Import from CSV, XLS files
-        - Choose custom column names 
-        - Add tag
-        - visualization
-        - logging
     - other (1):
+        - admin control panel
         - todo from other files (2)
         - develop data saving and loading functions
         - (Transaction) is_debit() or is_credit() to check transaction type
@@ -26,3 +21,9 @@
         - Data visualizations
         - Set card as account
     - Secure card number and cvv save methods
+    - transactions:
+        - Import from CSV, XLS files
+        - Choose custom column names 
+        - Add tag
+        - visualization
+        - logging
