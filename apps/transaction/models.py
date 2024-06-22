@@ -42,7 +42,7 @@ class Transaction(Base):
     destination = models.CharField(max_length=50)
 
     description = models.TextField()
-    tags = models.CharField()
+    tags = models.CharField(max_length=20)
 
     def __str__(self) -> str:
         return f'{self.amount} for {self.title} on {self.timestamp}'
