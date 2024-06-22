@@ -1,20 +1,22 @@
 from django.db import models
 
-from ..wallet.models import Owner
+# from ..wallet.models import Owner
 from ..utils.models import Base
 
 
-class Bank(Base):
-    """Bank model"""
+# class Bank(Base):
+#     """Bank model"""
 
-    title = models.CharField(max_length=20)
+#     title = models.CharField(max_length=20)
 
 
 class Card(Base):
     """Card model"""
 
-    owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name="cards")
-    bank = models.ForeignKey(Bank, on_delete=models.CASCADE, related_name="cards")
+    # owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name="cards")
+    owner = models.CharField(max_length=50)
+    # bank = models.ForeignKey(Bank, on_delete=models.CASCADE, related_name="cards")
+    bank = models.CharField(max_length=50)
 
     title = models.CharField(max_length=20, null=True, blank=True)
 
