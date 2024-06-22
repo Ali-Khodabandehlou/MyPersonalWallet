@@ -26,9 +26,10 @@ class Card(Base):
 
     def __str__(self) -> str:
         if self.title is None:
-            return f'{self.bank.title} ({self.owner})'
+            return f'{self.bank} ({self.owner})'
         return self.title
     
+    @property
     def balance(self) -> float:
         # TODO: complete this method
         return 0.0

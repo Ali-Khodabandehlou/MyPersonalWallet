@@ -4,14 +4,14 @@ from .models import Transaction
 
 
 class TransactionAdmin(admin.ModelAdmin):
-    list_display = ('title', 'amount_formatted', 'timestamp', 'origin', 'destination', 'tags')
-    list_filter = ('origin', 'destination', 'timestamp')
+    list_display = ('title', 'amount_formatted', 'timestamp', 'origin_card', 'destination_card', 'tags')
+    list_filter = ('origin_card', 'destination_card', 'timestamp')
     search_fields = ('title', 'description', 'tags')
     # prepopulated_fields = {'tags': ('title',)}
 
     @admin.display(description='Amount')
     def amount_formatted(self, obj):
-        return f"{obj.amount:.2f}"  # Format amount with 2 decimal places
+        return f"{obj.amount:,.2f}"  # Format amount with 2 decimal places
 
     # amount_formatted.short_description = 'Amount'
     # list_display = list_display + (amount_formatted,)  # Add formatted amount to list_display
