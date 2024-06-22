@@ -45,4 +45,4 @@ class Transaction(Base):
     tags = models.CharField(max_length=20)
 
     def __str__(self) -> str:
-        return f'{self.amount} for {self.title} on {self.timestamp}'
+        return f'{self.amount} for {self.title} on {self.timestamp.date().strftime()}'
