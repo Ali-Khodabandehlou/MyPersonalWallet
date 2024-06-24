@@ -17,7 +17,7 @@ class Owner(Base):
         return self.nick_name
 
     def __str__(self) -> str:
-        return self.show_name()
+        return self.show_name
     
 
 # class Wallet(Base):
