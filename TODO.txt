@@ -1,5 +1,5 @@
 - Store credit card info (keep security in mind):
-    - continue where I left: transaction model
+    - continue where I left: transaction model -> card model
     - other (1):
         - todo from other files (2)
         - (Transaction) update_balance() to adjust card balance after a transaction

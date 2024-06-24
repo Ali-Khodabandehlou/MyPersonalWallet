@@ -13,10 +13,9 @@ class Transaction(Base):
     timestamp = models.DateTimeField()
     amount = models.FloatField()
 
-    # origin = models.CharField(max_length=50, blank=True, null=True)
     origin_card = models.ForeignKey(Card, on_delete=models.CASCADE, related_name="expense_transactions", null=True)
-    # destination = models.CharField(max_length=50, blank=True, null=True)
     destination_card = models.ForeignKey(Card, on_delete=models.CASCADE, related_name="income_transactions", null=True)
+    # TODO: handle wallets and other forms of accounts
 
 #     INCOME = "INCOME"
 #     EXPENSE = "EXPENSE"
